@@ -1,22 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
 
+
 function App() {
+  const ULTIMA_VEZ_QUE_BEBEU_TIMESTAMP = new Date('01/02/2021').getTime()
+  const HOJE_TIMESTAMP = new Date().getTime()
+  const dias_sem_beber = parseInt((HOJE_TIMESTAMP - ULTIMA_VEZ_QUE_BEBEU_TIMESTAMP) / (24 * 3600 * 1000))
+  console.log({ ULTIMA_VEZ_QUE_BEBEU_TIMESTAMP, HOJE_TIMESTAMP })
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <span className="App-logo">🍺</span>
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          O Adriano está a <strong>{dias_sem_beber} dias</strong> sem beber.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
       </header>
     </div>
   );
